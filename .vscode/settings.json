@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "\\\\wsl$\\Ubuntu\\home\\orpheus\\discord\\discord-bot\\data\\db\\database.db",
+            "name": "test",
+            "group": "test"
+        }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "python.formatting.provider": "black"
+}
