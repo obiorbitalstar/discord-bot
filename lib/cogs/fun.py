@@ -5,6 +5,8 @@ from aiohttp import request
 from discord.ext.commands import Cog , BucketType
 from discord.ext.commands import command, cooldown
 from discord.ext.commands.errors import BadArgument
+
+
 class Fun(Cog):
     def __init__(self, bot) :
         self.bot = bot
@@ -27,9 +29,6 @@ class Fun(Cog):
             await ctx.send("I can't roll that many dice, Please try a lower number")
     
     
-
-
-
 
     @command(name="slap", aliases=["hit"])
     async def slap_member(self, ctx, member: Member, *, reason: Optional[str] = "for no reason"):
