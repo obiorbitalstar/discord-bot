@@ -31,8 +31,8 @@ class Reactions(Cog):
 				"💜": self.bot.guild.get_role(653940305300815882), # Purple
 				"🖤": self.bot.guild.get_role(653940328453373952), # Black
 			}
-			self.reaction_message = await self.bot.get_channel(860528402754306088).fetch_message(759434223802253362)
-			self.starboard_channel = self.bot.get_channel(860528402754306088)
+			self.reaction_message = await self.bot.get_channel(860469923130245132).fetch_message(863116728292343818)
+			self.starboard_channel = self.bot.get_channel(860469923130245132)
 			self.bot.cogs_ready.ready_up("reactions")
 
 	@command(name="createpoll", aliases=["mkpoll"])

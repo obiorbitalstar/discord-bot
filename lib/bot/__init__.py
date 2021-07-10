@@ -14,13 +14,13 @@ from discord.ext.commands import when_mentioned_or, command, has_permissions
 
 from ..db import db
 PREFIX = '+'
-OWNER_IDS = [385807530913169426]
+OWNER_IDS = [246751909199740942]
 COGS = [path.split("/")[-1][:-3] for path in glob("./lib/cogs/*.py")]
 IGNORE_EXCEPTIONS = (CommandNotFound, BadArgument)
 
 
 def get_prefix(bot, message):
-	# prefix = db.field("SELECT Prefix FROM guilds WHERE GuildID = ?", message.guild.id)
+	prefix = db.field("SELECT Prefix FROM guilds WHERE GuildID = ?", message.guild.id)
 	return when_mentioned_or(PREFIX)(bot, message)
 
 

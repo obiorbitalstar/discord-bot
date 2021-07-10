@@ -44,11 +44,24 @@ class HelpMenu(ListPageSource):
 
 class Exp(Cog):
 	def __init__(self, bot):
+		
 		self.bot = bot
 
 	async def process_xp(self, message):
-		xp, lvl, xplock = db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id)
+		# print('AM HERE ')
+		# print(message.author.id)
+		# db_record =  db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id) 
+		# xp_to_add = randint(10, 100)
+		# new_lvl = int(((20+xp_to_add)//42) ** 0.55)
 
+		# if db_record is None:
+		# 	db.execute("INSERT INTO exp VALUES (?, ?, ?, ?)",
+		# 		 message.author.id, xp_to_add, new_lvl, (datetime.utcnow()+timedelta(seconds=60)).isoformat())
+
+		# print(db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id))
+		
+		xp, lvl, xplock = db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id)
+		print(xp, lvl , xplock)
 		if datetime.utcnow() > datetime.fromisoformat(xplock):
 			await self.add_xp(message, xp, lvl)
 
